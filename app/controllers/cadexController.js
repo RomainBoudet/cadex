@@ -17,6 +17,20 @@ const cadexController = {
         // potentiellement un verb, un name, un adjective, un complement
         // Et si il y a deux clés identiques, la deuxieme écrasse la premiére, celle donné par l'utilisateur prend donc le dessus !
 
+        if (req.query.hasOwnProperty('name')) {
+            console.log(chalk.blue `Un nom a été inséré dans la query par l'utilisateur`);
+        }
+
+        if (req.query.hasOwnProperty('verb')) {
+            console.log(chalk.blue `Un verbe a été inséré dans la query par l'utilisateur`);
+        }
+        if (req.query.hasOwnProperty('complement')) {
+            console.log(chalk.blue `Un complément a été inséré dans la query par l'utilisateur`);
+        }
+        if (req.query.hasOwnProperty('adjective')) {
+            console.log(chalk.blue `Un adjectif a été inséré dans la query par l'utilisateur`);
+        }
+
         const baseCadex = {
             ...cadexFactory.generate(),
             ...req.query
