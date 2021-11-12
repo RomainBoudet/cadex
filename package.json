@@ -1,0 +1,24 @@
+{
+  "name": "cadex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RomainBoudet/cadex.git"
+  },
+  "author": "Romain Boudet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RomainBoudet/cadex/issues"
+  },
+  "homepage": "https://github.com/RomainBoudet/cadex#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  }
+}
