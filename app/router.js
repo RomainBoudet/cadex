@@ -1,8 +1,10 @@
 
 const {Router} = require ('express');
 
+const cadexController = require('./controllers/cadexController');
+
 const router = Router();
 
-router.get('/cadex', (req, res) => {res.send('hello World')} );
+router.get('/cadex', cadexController.getCadex);
 
 module.exports = router;
