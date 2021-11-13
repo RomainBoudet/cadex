@@ -15,7 +15,10 @@ app.use (helmet()); // => source de [DEP0066] DeprecationWarning: OutgoingMessag
 
 const router = require('./app/router');
 
+// Je permet a mon API de lire les objet JSON rentrant 
 app.use(express.json());
+// Je permet a mon API de savoir lire les formats urlencoded
+app.use(express.urlencoded());
 
 app.use('/api', router);
 
