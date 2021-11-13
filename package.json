@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "seed": " cd data && node seeding.js",
     "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,6 +25,7 @@
     "express-swagger-generator": "^1.1.17",
     "helmet": "^4.6.0",
     "nodemon": "^2.0.15",
+    "pg": "^8.7.1",
     "pluralize": "^8.0.0",
     "spdy": "^4.0.2"
   }
