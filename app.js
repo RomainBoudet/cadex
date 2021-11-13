@@ -28,7 +28,7 @@ app.use(express.json());
 // Je permet a mon API de savoir lire les formats urlencoded
 app.use(express.urlencoded());
 // Je préfixe mes routes
-app.use('/api', router);
+app.use('/api/v1', router);
 
 //! Mes options pour le serveur https
 const options = {

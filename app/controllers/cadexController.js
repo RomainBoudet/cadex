@@ -67,8 +67,6 @@ const cadexController = {
 
 
 
-
-
 }
 
 module.exports = cadexController;
