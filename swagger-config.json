@@ -1,0 +1,16 @@
+{
+    "swaggerDefinition": {
+        "info": {
+            "description": "Ceci est un serveur de génération de cadavre exquis",
+            "title": "Cadex",
+            "version": "1.0.0"
+        },
+        "basePath": "/api",
+        "produces": [
+            "application/json",
+            "application/x-www-form-urlencoded"
+        ],
+        "schemes": ["https"]
+    },
+    "files": ["./app/router.js", "./app/services/cadexFactory.js"]
+}
