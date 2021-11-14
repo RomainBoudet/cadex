@@ -50,19 +50,17 @@ class Adjectives{
 
   /**
    * Méthode chargé d'aller chercher les informations relatives à un adjectif passé en paramétre
-   * @param id - un id d'un adjectif
-   * @returns - les informations du adjectives demandées
+   * @param adjectives - un adjectif
+   * @returns - les informations du adjectif demandées
    * @static - une méthode static
    * @async - une méthode asynchrone
    */
-  static async findOne(id) {
-
-
+   static async findOne(adjectives) {
     const {
       rows,
     } = await db.query(
-      'SELECT * FROM adjectives WHERE adjectives.id = $1;',
-      [id]
+      'SELECT * FROM adjectives WHERE adjectives.adjectives = $1;',
+      [adjectives]
     );
 
     if (!rows[0]) {
@@ -70,7 +68,7 @@ class Adjectives{
     }
 
     console.log(chalk.yellow
-        `le adjectives id : ${id} a été demandé en BDD !`
+        `l'adjectif : ${adjectives} a été demandé en BDD !`
     );
 
     return new Adjectives(rows[0]);

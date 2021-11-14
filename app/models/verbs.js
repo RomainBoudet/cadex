@@ -50,19 +50,19 @@ class Verbs{
 
   /**
    * Méthode chargé d'aller chercher les informations relatives à un verbe passé en paramétre
-   * @param id - un id d'un verbe
+   * @param verbs - un verbs d'un verbe
    * @returns - les informations du verbs demandées
    * @static - une méthode static
    * @async - une méthode asynchrone
    */
-  static async findOne(id) {
+  static async findOne(verbs) {
 
 
     const {
       rows,
     } = await db.query(
-      'SELECT * FROM verbs WHERE verbs.id = $1;',
-      [id]
+      'SELECT * FROM verbs WHERE verbs.verbs = $1;',
+      [verbs]
     );
 
     if (!rows[0]) {
@@ -70,7 +70,7 @@ class Verbs{
     }
 
     console.log(chalk.yellow
-        `le verbs id : ${id} a été demandé en BDD !`
+        `le verb : ${verbs} a été demandé en BDD !`
     );
 
     return new Verbs(rows[0]);

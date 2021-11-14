@@ -55,7 +55,7 @@ CREATE TABLE cadex (
 ------------------------------------------------------------
 CREATE TABLE names (
     id                  INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    names               text_valid NOT NULL,
+    names               text_valid UNIQUE NOT NULL,
     created_date        timestamptz NOT NULL DEFAULT now(),
 	updated_date        timestamptz,
 	CHECK (created_date < updated_date)
@@ -66,7 +66,7 @@ CREATE TABLE names (
 ------------------------------------------------------------
 CREATE TABLE adjectives (
     id                  INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    adjectives          text_valid NOT NULL,
+    adjectives          text_valid UNIQUE NOT NULL,
     created_date        timestamptz NOT NULL DEFAULT now(),
 	updated_date        timestamptz,
 	CHECK (created_date < updated_date)
@@ -77,7 +77,7 @@ CREATE TABLE adjectives (
 ------------------------------------------------------------
 CREATE TABLE verbs (
     id                  INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    verbs               text_valid NOT NULL,
+    verbs               text_valid UNIQUE NOT NULL,
     created_date        timestamptz NOT NULL DEFAULT now(),
 	updated_date        timestamptz,
 	CHECK (created_date < updated_date)
@@ -88,7 +88,7 @@ CREATE TABLE verbs (
 ------------------------------------------------------------
 CREATE TABLE complements (
     id                  INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    complements          text_valid NOT NULL,
+    complements          text_valid UNIQUE NOT NULL,
     created_date        timestamptz NOT NULL DEFAULT now(),
 	updated_date        timestamptz,
 	CHECK (created_date < updated_date)

@@ -50,17 +50,17 @@ class Complements{
 
   /**
    * Méthode chargé d'aller chercher les informations relatives à un complément passé en paramétre
-   * @param id - un id d'un complément
+   * @param complements - un id d'un complément
    * @returns - les informations du complements demandées
    * @static - une méthode static
    * @async - une méthode asynchrone
    */
-  static async findOne(id) {
+  static async findOne(complements) {
     const {
       rows,
     } = await db.query(
-      'SELECT * FROM complements WHERE complements.id = $1;',
-      [id]
+      'SELECT * FROM complements WHERE complements.complements = $1;',
+      [complements]
     );
 
     if (!rows[0]) {
@@ -68,7 +68,7 @@ class Complements{
     }
 
     console.log(chalk.yellow
-        `le complements id : ${id} a été demandé en BDD !`
+        `le complements : ${complements} a été demandé en BDD !`
     );
 
     return new Complements(rows[0]);

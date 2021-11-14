@@ -21,7 +21,7 @@ const pluralize = require('pluralize');
 
 // Je récupére mes données depuis ma bdd. Je les stock dans des tableaux.
 let getData;
-(getData = async (req, res) => {
+(getData = async () => {
     try {
         names = await Names.findAll();
         names.map((item) => arrayNames.push(item.names));

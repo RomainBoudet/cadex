@@ -4,6 +4,7 @@ const {Router} = require ('express');
 const cadexController = require('./controllers/cadexController');
 
 const router = Router();
+const {cleanQuery} = require('./middlewares/sanitiz');
 
 /**
  * Génère un Cadex de manière aléatoire, avec la possibilité de fournir des segments de phrase
@@ -15,7 +16,7 @@ const router = Router();
  * @param {string} complement.query - le complément qu'on peut fournir
  * @returns {string} 200 - le cadavre exquis généré
  */
-router.get('/cadex', cadexController.getCadex);
+router.get('/cadex', cleanQuery, cadexController.getCadex);
 
 /**
  * Ajoute des propositions de segments de phrase et génère un Cadex basé sur les segments fournis

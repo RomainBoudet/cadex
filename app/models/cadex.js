@@ -50,28 +50,26 @@ class Cadex{
 
   /**
    * Méthode chargé d'aller chercher les informations relatives à un cadex passé en paramétre
-   * @param id - un id d'un cadex
+   * @param cadex - un cadex
    * @returns - les informations du cadex demandées
    * @static - une méthode static
    * @async - une méthode asynchrone
    */
-  static async findOne(id) {
-
-
+  static async findOne(cadex) {
     const {
       rows,
     } = await db.query(
-      'SELECT * FROM cadex WHERE cadex.id = $1;',
-      [id]
+      'SELECT * FROM cadex WHERE cadex.cadex = $1;',
+      [cadex]
     );
 
     if (!rows[0]) {
         return null;
     }
 
-    console.log(chalk.yellow
-        `le cadex id : ${id} a été demandé en BDD !`
-    );
+    /* console.log(chalk.yellow
+        `le cadex : ${cadex} a été demandé en BDD !`
+    ); */
 
     return new Cadex(rows[0]);
   }
@@ -93,9 +91,9 @@ class Cadex{
 
     this.id = rows[0].id;
     this.createdDate = rows[0].created_date;
-    console.log(chalk.yellow
+    /* console.log(chalk.yellow
         `le cadex id ${this.id} a été inséré à la date du ${this.createdDate} !`
-    );
+    ); */
     return new Cadex(rows[0]);
 
   }

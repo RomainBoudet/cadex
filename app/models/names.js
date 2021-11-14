@@ -48,26 +48,26 @@ class Names {
 
     /**
      * Méthode chargé d'aller chercher les informations relatives à un nom passé en paramétre
-     * @param id - un id d'un nom
+     * @param names - un names d'un nom
      * @returns - les informations du names demandées
      * @static - une méthode static
      * @async - une méthode asynchrone
      */
-    static async findOne(id) {
+    static async findOne(names) {
 
 
         const {
             rows,
         } = await db.query(
-            'SELECT * FROM names WHERE names.id = $1;',
-            [id]
+            'SELECT * FROM names WHERE names.names = $1;',
+            [names]
         );
 
         if (!rows[0]) {
             return null;
         }
 
-        console.log(chalk.yellow `le names id : ${id} a été demandé en BDD !`);
+        console.log(chalk.yellow `le name : ${names} a été demandé en BDD !`);
 
         return new Names(rows[0]);
     }
