@@ -43,7 +43,7 @@ BEGIN;
 ------------------------------------------------------------
 CREATE TABLE cadex (
     id                  INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    cadex               long_text_valid NOT NULL,
+    cadex               long_text_valid UNIQUE NOT NULL,
     created_date        timestamptz NOT NULL DEFAULT now(),
 	updated_date        timestamptz,
 	CHECK (created_date < updated_date)

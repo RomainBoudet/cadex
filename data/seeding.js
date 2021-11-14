@@ -31,7 +31,7 @@ function execShellCommand(cmd) {
  */
 const seeding = async () => {
 
-    console.time(chalk.yellow `Génération de la fonction seeding`);
+    console.time(chalk.yellow `Seeding éffectué avec succés en `);
 
     //! On fait place neuve ! En ligne de commande on supprime la BDD et on la recreer avant de seeder, pour s'assurer qu'elle est vierge.
 
@@ -43,7 +43,7 @@ const seeding = async () => {
 
     //! Import des noms
 
-    console.log(chalk.bold.hex('#29F319')
+    console.log(chalk.black.bgGreenBright
         `Début de l'import des noms`);
 
     const namesInsert = "INSERT INTO names (names) VALUES ($1);";
@@ -54,13 +54,13 @@ const seeding = async () => {
 
     }
 
-    console.log(chalk.bold.hex('#29F319')
+    console.log(chalk.black.bgGreenBright
         `Fin de l'import des noms`);
 
 
     //! Import des adjectifs
 
-    console.log(chalk.bold.hex('#29F319')
+    console.log(chalk.black.bgGreenBright
         `Début de l'import des adjectifs`);
 
     const adjectivesInsert = "INSERT INTO adjectives (adjectives) VALUES ($1);";
@@ -71,7 +71,7 @@ const seeding = async () => {
 
     }
 
-    console.log(chalk.bold.hex('#29F319')
+    console.log(chalk.black.bgGreenBright
         `Fin de l'import des adjectifs`);
 
 
@@ -79,7 +79,7 @@ const seeding = async () => {
 
     //! Import des verbes
 
-    console.log(chalk.bold.hex('#29F319')
+    console.log(chalk.black.bgGreenBright
         `Début de l'import des verbes`);
 
     const verbsInsert = "INSERT INTO verbs (verbs) VALUES ($1);";
@@ -90,14 +90,14 @@ const seeding = async () => {
 
     }
 
-    console.log(chalk.bold.hex('#29F319')
+    console.log(chalk.black.bgGreenBright
         `Fin de l'import des verbes`);
 
 
 
     //! Import des compléments
 
-    console.log(chalk.bold.hex('#29F319')
+    console.log(chalk.black.bgGreenBright
         `Début de l'import des compléments`);
 
     const complementsInsert = "INSERT INTO complements (complements) VALUES ($1);";
@@ -108,10 +108,10 @@ const seeding = async () => {
 
     }
 
-    console.log(chalk.bold.hex('#29F319')
+    console.log(chalk.black.bgGreenBright
         `Fin de l'import des compléments`);
 
-    console.timeEnd(chalk.yellow `Génération de la fonction seeding`);
+    console.timeEnd(chalk.yellow `Seeding éffectué avec succés en `);
 
 };
 
