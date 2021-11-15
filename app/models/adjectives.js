@@ -67,9 +67,9 @@ class Adjectives{
         return null;
     }
 
-    console.log(chalk.yellow
+    /* console.log(chalk.yellow
         `l'adjectif : ${adjectives} a été demandé en BDD !`
-    );
+    ); */
 
     return new Adjectives(rows[0]);
   }

@@ -100,7 +100,8 @@ const cadexFactory = {
 
             // on oublie pas, pas de fat arrow avec this, sinon on ne peut pas associer this comme étant l'objet courant ! Fat arrow ne redéfinit pas le contexte.
             glue: function () {
-                
+
+            
                 return [this.name, this.adjective, this.verb, this.complement].join(' ');
             }
         }
