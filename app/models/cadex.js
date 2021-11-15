@@ -40,9 +40,9 @@ class Cadex{
     if (!rows[0]) {
      return null;
     }
-    console.log(chalk.yellow
+    /* console.log(chalk.yellow
       `les informations des ${rows.length} cadex ont été demandé !`
-    );
+    ); */
 
     return rows.map((cadex) => new Cadex(cadex));
   }

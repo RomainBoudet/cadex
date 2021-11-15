@@ -20,9 +20,6 @@ const cadexController = {
      */
     getCadex: async (req, res) => {
 
-
-        
-
         // Dans le cas ou un utilisateur essaie d'altérer ma méthode glue..
         delete req.query.glue;
 
@@ -141,7 +138,7 @@ const cadexController = {
         }
 
         // je renvoie le cadex au front
-        res.status(200).json(baseCadex.glue());
+        res.status(200).json({cadex:baseCadex.glue(), info:"You can add verb, complement, adjective and name in JSON or urlencoded format in post request to https://localhost:4000/api/v1/cadex ", info_bis:"You can also add verb, complement, adjective and name in urlencoded format from your browser => try :'https://localhost:4000/api/v1/cadex?name=Alfred%20Dupont&verb=licencie&complement=un%20poney%20Shetland'"});
     },
 
 
@@ -154,8 +151,6 @@ const cadexController = {
      */
     addproposition: (req, res) => {
 
-        console.log(req.body); // J'accepte deux type de format : JSON et urlencoded. 
-
         cadexFactory.add(req.body);
 
         delete req.body.glue; // Petite sécurité..
@@ -165,7 +160,7 @@ const cadexController = {
             ...req.body
         }; // Je renvoie un cadex avec les propositions de l'utilisateur...
 
-        res.status(200).json(baseCadex.glue());
+        res.status(200).json({cadex:baseCadex.glue(), info:"You can add verb, complement, adjective and name in urlencoded format, directly with your browser in get request to https://localhost:4000/api/v1/cadex "});
 
     }
 

@@ -40,8 +40,8 @@ class Names {
         if (!rows[0]) {
             return null;
         }
-        console.log(chalk.yellow `les informations des ${rows.length} names ont été demandé !`);
-
+/*         console.log(chalk.yellow `les informations des ${rows.length} names ont été demandé !`);
+ */
         return rows.map((item) => new Names(item));
     }
 
@@ -67,8 +67,8 @@ class Names {
             return null;
         }
 
-        console.log(chalk.yellow `le name : ${names} a été demandé en BDD !`);
-
+/*         console.log(chalk.yellow `le name : ${names} a été demandé en BDD !`);
+ */
         return new Names(rows[0]);
     }
 

@@ -40,9 +40,9 @@ class Complements{
     if (!rows[0]) {
      return null;
     }
-    console.log(chalk.yellow
+    /* console.log(chalk.yellow
       `les informations des ${rows.length} complements ont été demandé !`
-    );
+    ); */
 
     return rows.map((complements) => new Complements(complements));
   }
@@ -67,9 +67,9 @@ class Complements{
         return null;
     }
 
-    console.log(chalk.yellow
+    /* console.log(chalk.yellow
         `le complements : ${complements} a été demandé en BDD !`
-    );
+    ); */
 
     return new Complements(rows[0]);
   }

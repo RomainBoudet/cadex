@@ -40,9 +40,9 @@ class Adjectives{
     if (!rows[0]) {
      return null;
     }
-    console.log(chalk.yellow
+    /* console.log(chalk.yellow
       `les informations des ${rows.length} adjectives ont été demandé !`
-    );
+    ); */
 
     return rows.map((adjectives) => new Adjectives(adjectives));
   }

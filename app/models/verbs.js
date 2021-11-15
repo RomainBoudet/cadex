@@ -40,9 +40,9 @@ class Verbs{
     if (!rows[0]) {
      return null;
     }
-    console.log(chalk.yellow
+    /* console.log(chalk.yellow
       `les informations des ${rows.length} verbs ont été demandé !`
-    );
+    ); */
 
     return rows.map((verbs) => new Verbs(verbs));
   }
@@ -69,9 +69,9 @@ class Verbs{
         return null;
     }
 
-    console.log(chalk.yellow
+   /*  console.log(chalk.yellow
         `le verb : ${verbs} a été demandé en BDD !`
-    );
+    ); */
 
     return new Verbs(rows[0]);
   }
