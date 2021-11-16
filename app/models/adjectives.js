@@ -74,7 +74,6 @@ class Adjectives{
     return new Adjectives(rows[0]);
   }
 
-
   /**
    * Méthode chargé d'aller insérer les informations relatives à un adjectif passé en paramétre
    * @param adjectives - un adjectif

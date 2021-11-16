@@ -1,6 +1,5 @@
 require('dotenv').config();
 const chalk = require('chalk');
-const spdy = require('spdy'); // source de => [DEP0111] DeprecationWarning: Access to process.binding('http_parser') is deprecated.
 const fs = require('fs');
 const helmet = require('helmet');
 
@@ -30,12 +29,6 @@ app.use(express.urlencoded());
 // Je préfixe mes routes
 app.use('/api/v1', router);
 
-//! Mes options pour le serveur https
-const options = {
-    key: fs.readFileSync(process.env.SSL_KEY_FILE),
-    cert: fs.readFileSync(process.env.SSL_CERT_FILE),
-}
 
-
-spdy.createServer(options, app).listen(port, () => console.log(chalk.cyan `API running on https://localhost:${port}/api`));
+app.listen(port, () => console.log(chalk.cyan `API running on http://localhost:${port}/api`));
 
