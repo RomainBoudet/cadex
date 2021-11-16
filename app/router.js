@@ -4,6 +4,7 @@ const {
 
 const cadexController = require('./controllers/cadexController');
 
+
 const router = Router();
 const {
     clean
@@ -22,7 +23,7 @@ const apiLimiter = rateLimit({
 /**
  * Génère un Cadex de manière aléatoire, avec la possibilité de fournir des segments de phrase
  * Toute donnée fournie en query avec un caractére interdit sera supprimé => [<>{}_*+$%#()=@&~/\|]
- * @route GET /cadex
+ * @route GET /api/cadex
  * @group Cadex - génération de cadavre exquis
  * @param {string} name.query - le nom qu'on peut fournir
  * @param {string} adjective.query - l'adjectif qu'on peut fournir
@@ -34,7 +35,7 @@ router.get('/cadex', apiLimiter, clean, cadexController.getCadex);
 
 /**
  * Ajoute des propositions de segments de phrase et génère un Cadex basé sur les segments fournis
- * @route POST /cadex
+ * @route POST /api/cadex
  * @group Cadex - génération de cadavre exquis
  * @param {string} name.body - le nom qu'on peut fournir
  * @param {string} adjective.body - l'adjectif qu'on peut fournir
@@ -43,5 +44,7 @@ router.get('/cadex', apiLimiter, clean, cadexController.getCadex);
  * @returns {string} 200 - le cadavre exquis généré
  */
 router.post('/cadex', apiLimiter, clean, cadexController.addproposition);
+
+
 
 module.exports = router;

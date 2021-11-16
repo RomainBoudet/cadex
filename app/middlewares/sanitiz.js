@@ -18,7 +18,6 @@ const clean = (req, res, next) => {
 
         if (Object.keys(req.query).length > 0) {
             const theQuery = req.query;
-            console.log('on passe !!! query');
             for (let prop in theQuery) {
 
                 //J'interdis tout caractéres spéciaux !
