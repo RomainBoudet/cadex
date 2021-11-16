@@ -22,10 +22,11 @@ If you want to learn more about cadavre exquis : [cadavre exquis](https://fr.wik
 
 * 1. Clone this [repository](https://github.com/RomainBoudet/cadex)
 * 2. Make file .env has the same place as the file .env.example. Fill it with the port number of your choice and your posgres password.
-* 3. Lunch in command line in the cadex folder : npm run seed (you now have a new database named cadex with data in it). CTRL + c if you need to exit.
-* 4. Lunch in command line in the cadex folder : npm test (fiew test are done).
-* 5. Lunch in command line in the cadex folder : npm start
-* 6. In your broser, go to http://localhost:yourPortnumber/api/v1/cadex
+* 3. Lunch in command line in the cadex folder : npm install
+* 4. Lunch in command line in the cadex folder : npm run seed (you now have a new database named cadex with data in it). CTRL + c if you need to exit.
+* 5. Lunch in command line in the cadex folder : npm test (fiew test are done).
+* 6. Lunch in command line in the cadex folder : npm start
+* 7. In your broser, go to http://localhost:yourPortnumber/api/v1/cadex
 
 
 ### Add data in database
