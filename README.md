@@ -13,7 +13,7 @@ If you want to learn more about cadavre exquis : [cadavre exquis](https://fr.wik
 ##### Mains npm packages 
    * npm packages for documentation : express-swagger-generator
    * npm packages for test : mocha, chai
-   * npm package security : helmet, express-rate-limit, validator
+   * npm security package : helmet, express-rate-limit, validator
 
 
 ### Install
@@ -26,7 +26,7 @@ If you want to learn more about cadavre exquis : [cadavre exquis](https://fr.wik
 * 4. Lunch in command line in the cadex folder : npm run seed (you now have a new database named cadex with data in it). CTRL + c if you need to exit.
 * 5. Lunch in command line in the cadex folder : npm test (fiew test are done).
 * 6. Lunch in command line in the cadex folder : npm start
-* 7. In your broser, go to http://localhost:yourPortnumber/api/v1/cadex
+* 7. In your browser, go to http://localhost:yourPortnumber/api/v1/cadex
 
 
 ### Add data in database
