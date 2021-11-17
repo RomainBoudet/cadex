@@ -10,7 +10,7 @@
             "application/json",
             "application/x-www-form-urlencoded"
         ],
-        "schemes": ["https"]
+        "schemes": ["http"]
     },
     "files": ["./app/router.js", "./app/services/cadexFactory.js"]
 }
