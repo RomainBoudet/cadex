@@ -37,3 +37,4 @@ You can also add verb, complement, adjective and name in urlencoded format from 
 
 For more technical information you can have a look on the swagger documentation : http://localhost:yourPortNumber/api-docs when the API is running.
 
+##### This api is online, you can [try it](http://thedev.fr/api/v1/cadex) ! 
