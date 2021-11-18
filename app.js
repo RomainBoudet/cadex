@@ -33,7 +33,7 @@ app.use('/api/v1', router);
  * Redirection vers une page 404
  */
  app.use((req, res) => {
-    res.status(404).redirect('/api-docs');
+    res.status(200).redirect('/api-docs');
   });
 
 app.listen(port, () => console.log(chalk.cyan `API running on http://localhost:${port}/`));
