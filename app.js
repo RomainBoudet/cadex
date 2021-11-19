@@ -1,8 +1,8 @@
 require('dotenv').config();
 const chalk = require('chalk');
 const helmet = require('helmet');
-const spdy = require('spdy');
-const fs = require('fs');
+//const spdy = require('spdy');
+//const fs = require('fs');
 
 const express = require('express');
 const router = require('./app/router');
@@ -40,10 +40,11 @@ app.use('/api/v1', router);
   });
 
 //! Mes options pour le serveur https
-const options = {
+/* const options = {
   key: fs.readFileSync(process.env.SSL_KEY_FILE),
   cert: fs.readFileSync(process.env.SSL_CERT_FILE),
 }
 
 
-spdy.createServer(options, app).listen(port, () => console.log(chalk.cyan `API running on https://localhost:${port}`));
+spdy.createServer(options, app).listen(port, () => console.log(chalk.cyan `API running on https://localhost:${port}`)); */
+app.listen(port, () => console.log(chalk.cyan `API running on http://localhost:${port}/`));
