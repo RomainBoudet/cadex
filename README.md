@@ -19,6 +19,7 @@ If you want to learn more about cadavre exquis : [cadavre exquis](https://fr.wik
 ### Install
 
 (*You need to have installed [postgres](https://www.postgresql.org/docs/14/tutorial-install.html) and [node.js](https://nodejs.org/en/download/) in your machine*)
+
 (*you might need to temporarily modify the postgres configuration file to switch peer to trust one the first line in => /etc/postgresql/14/main/pg_hba.conf*)
 
 * 1. Clone this [repository](https://github.com/RomainBoudet/cadex)
