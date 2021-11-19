@@ -1,6 +1,8 @@
 require('dotenv').config();
 const chalk = require('chalk');
 const helmet = require('helmet');
+const spdy = require('spdy');
+const fs = require('fs');
 
 const express = require('express');
 const router = require('./app/router');
@@ -26,6 +28,7 @@ app.use (helmet()); // => source de [DEP0066] DeprecationWarning: OutgoingMessag
 app.use(express.json());
 // Je permet a mon API de savoir lire les formats urlencoded
 app.use(express.urlencoded());
+
 // Je préfixe mes routes
 app.use('/api/v1', router);
 
@@ -33,8 +36,14 @@ app.use('/api/v1', router);
  * Redirection vers une page 404
  */
  app.use((req, res) => {
-    res.status(200).redirect('/api-docs');
+    res.status(404).redirect('/api-docs');
   });
 
-app.listen(port, () => console.log(chalk.cyan `API running on http://localhost:${port}/`));
+//! Mes options pour le serveur https
+const options = {
+  key: fs.readFileSync(process.env.SSL_KEY_FILE),
+  cert: fs.readFileSync(process.env.SSL_CERT_FILE),
+}
 
+
+spdy.createServer(options, app).listen(port, () => console.log(chalk.cyan `API running on https://localhost:${port}`));
