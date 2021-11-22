@@ -22,6 +22,14 @@ expressSwagger(optionSwagger);
 //helmet : https://expressjs.com/fr/advanced/best-practice-security.html 
 app.use (helmet()); // => source de [DEP0066] DeprecationWarning: OutgoingMessage.prototype._headers is deprecated
 
+
+app.set('x-powered-by', false);
+
+app.use((req, res, next) => {
+    res.setHeader("X-XSS-Protection", "1; mode=block");
+    next();
+  });
+  
 // Je permet a mon API de lire les objets JSON rentrant 
 app.use(express.json());
 // Je permet a mon API de savoir lire les formats urlencoded
