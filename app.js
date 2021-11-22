@@ -24,6 +24,16 @@ expressSwagger(optionSwagger);
 //helmet : https://expressjs.com/fr/advanced/best-practice-security.html 
 app.use (helmet()); // => source de [DEP0066] DeprecationWarning: OutgoingMessage.prototype._headers is deprecated
 
+app.use(
+  helmet.contentSecurityPolicy({
+    useDefaults: true,
+    directives: {
+      "script-src": ["'self'"],
+      "style-src": null,
+    },
+  })
+);
+
 
 app.set('x-powered-by', false);
 
