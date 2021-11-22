@@ -28,7 +28,7 @@ app.use(
   helmet.contentSecurityPolicy({
     useDefaults: true,
     directives: {
-      "script-src": ["'self'", "thedev.fr"],
+      "script-src": ["'none'"],
       "style-src": null,
     },
   })
