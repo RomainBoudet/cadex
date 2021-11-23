@@ -160,7 +160,7 @@ const cadexController = {
             ...req.body
         }; // Je renvoie un cadex avec les propositions de l'utilisateur...
 
-        res.status(200).json({cadex:baseCadex.glue(), info:"You can add verb, complement, adjective and name in urlencoded format, directly with your browser in get request to https://localhost:4000/v1/cadex "});
+        res.status(200).json({cadex:baseCadex.glue(), info:"You can add verb, complement, adjective and name in urlencoded format, directly with your browser in get request to https://cadex-api.thedev.fr/v1/cadex "});
 
     }
 
