@@ -5,7 +5,7 @@
             "title": "Cadex",
             "version": "1.0.0"
         },
-        "basePath": "/api/v1",
+        "basePath": "/v1",
         "produces": [
             "application/json",
             "application/x-www-form-urlencoded"

@@ -52,7 +52,7 @@ app.use(express.json());
 app.use(express.urlencoded());
 
 // Je préfixe mes routes
-app.use('/api/v1', router);
+app.use('/v1', router);
 
 /**
  * Redirection vers une page 404
