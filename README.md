@@ -28,14 +28,14 @@ If you want to learn more about cadavre exquis : [cadavre exquis](https://fr.wik
 * 4. Lunch in command line in the cadex folder : npm run seed (you now have a new database named cadex with data in it). CTRL + c if you need to exit.
 * 5. Lunch in command line in the cadex folder : npm test (fiew test are done).
 * 6. Lunch in command line in the cadex folder : npm start
-* 7. In your browser, go to http://localhost:yourPortnumber/api/v1/cadex
+* 7. In your browser, go to http://localhost:yourPortnumber/v1/cadex
 
 
 ### Add data in database
 
- You can add verb, complement, adjective and name in JSON or urlencoded format in post request to http://localhost:/api/v1/cadex
+ You can add verb, complement, adjective and name in JSON or urlencoded format in post request to http://localhost:/v1/cadex
 
-You can also add verb, complement, adjective and name in urlencoded format from your browser => try :'http://localhost:4000/api/v1/cadex?name=Alfred%20Dupont&verb=licencie&complement=un%20poney%20Shetland'
+You can also add verb, complement, adjective and name in urlencoded format from your browser => try :'http://localhost:4000/v1/cadex?name=Alfred%20Dupont&verb=licencie&complement=un%20poney%20Shetland'
 
 For more technical information you can have a look on the swagger documentation : http://localhost:yourPortNumber/api-docs when the API is running.
 
