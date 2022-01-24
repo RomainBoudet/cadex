@@ -15,7 +15,7 @@ const port = process.env.PORT || 4040;
 const expressSwagger = require('express-swagger-generator')(app);
 let optionSwagger = require('./swagger-config.json');
 optionSwagger.basedir = __dirname;
-optionSwagger.swaggerDefinition.host = `cadex-api.thedev.fr`;
+optionSwagger.swaggerDefinition.host = `cadex-api.romainboudet.fr`;
 expressSwagger(optionSwagger);
 
 
