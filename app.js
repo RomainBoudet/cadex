@@ -1,8 +1,6 @@
 require('dotenv').config();
 const chalk = require('chalk');
 const helmet = require('helmet');
-//const spdy = require('spdy');
-//const fs = require('fs');
 
 const express = require('express');
 const router = require('./app/router');
@@ -22,7 +20,7 @@ expressSwagger(optionSwagger);
 //! Mes MW pour l'API
 
 //helmet : https://expressjs.com/fr/advanced/best-practice-security.html 
-app.use (helmet()); // => source de [DEP0066] DeprecationWarning: OutgoingMessage.prototype._headers is deprecated
+//app.use (helmet()); // => source de [DEP0066] DeprecationWarning: OutgoingMessage.prototype._headers is deprecated
 
 app.use(
   helmet.contentSecurityPolicy({
@@ -35,16 +33,6 @@ app.use(
 );
 
 
-app.set('x-powered-by', false);
-
-app.use((req, res, next) => {
-  res.setHeader(
-    "Permissions-Policy",
-    "geolocation=(), fullscreen=(), autoplay=(), camera=(), display-capture=(), document-domain=(), fullscreen=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), sync-xhr=(), usb=(), screen-wake-lock=(), xr-spatial-tracking=()"
-  );
-    res.setHeader("X-XSS-Protection", "1; mode=block");
-    next();
-  });
 
 // Je permet a mon API de lire les objets JSON rentrant 
 app.use(express.json());
@@ -61,12 +49,5 @@ app.use('/v1', router);
     res.status(404).redirect('/api-docs');
   });
 
-//! Mes options pour le serveur https
-/* const options = {
-  key: fs.readFileSync(process.env.SSL_KEY_FILE),
-  cert: fs.readFileSync(process.env.SSL_CERT_FILE),
-}
 
-
-spdy.createServer(options, app).listen(port, () => console.log(chalk.cyan `API running on https://localhost:${port}`)); */
 app.listen(port, () => console.log(chalk.cyan `API running on http://localhost:${port}/`));
